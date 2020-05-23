@@ -1004,3 +1004,7 @@ td {
         color: #212529;
       }
     
+      a:hover {
+        color: #eebefa;
+      }
+    
