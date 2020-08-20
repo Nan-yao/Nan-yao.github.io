@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-08-20T01:47:29.861Z</updated>
+    <updated>2020-08-20T03:24:31.056Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,6 +10,29 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[为什么要赋予思想]]></title>
+        <id>https://nan-yao.github.io/post/wei-shi-me-yao-fu-yu-si-xiang/</id>
+        <link href="https://nan-yao.github.io/post/wei-shi-me-yao-fu-yu-si-xiang/">
+        </link>
+        <updated>2020-08-20T02:42:53.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://nan-yao.github.io/post-images/1597891944052.gif" alt="" loading="lazy"><br>
+人被赋予思想难道不是一件很奇怪的事吗<br>
+如果我们从开始的出生，成长<br>
+到最后的死亡<br>
+都不在我们的选择之下<br>
+那么做一个玩偶才是我们本来的宿命<br>
+不是吗<br>
+为什么要赋予思想<br>
+叫我们去反叛<br>
+父母 教育 婚姻<br>
+如果是玩偶<br>
+小孩子手上的那种<br>
+被安排<br>
+命运 就是那双手<br>
+那么我们 为什么要被赋予思想</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26830207&auto=1&height=66"></iframe>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于学习]]></title>
         <id>https://nan-yao.github.io/post/guan-yu-xue-xi/</id>
