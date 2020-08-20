@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-07-17T08:43:17.373Z</updated>
+    <updated>2020-08-20T01:43:54.160Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -32,6 +32,98 @@ C语言  python  Java  汇编语言<br>
 <p>计算机组成原理（👉《深入了解计算机系统》）   计算机操作系统  计算机编译原路  数据结构与算法<br>
 HTML  CSS  JavaScript<br>
 数据库   分布式系统（👉《数据密集型应用系统设计》）</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mysql的下载与安装]]></title>
+        <id>https://nan-yao.github.io/post/mysql-de-xia-zai-yu-an-zhuang/</id>
+        <link href="https://nan-yao.github.io/post/mysql-de-xia-zai-yu-an-zhuang/">
+        </link>
+        <updated>2020-06-16T15:27:28.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1下载mysql">🌸1.下载mysql</h2>
+<p><a href="https://dev.mysql.com/downloads/mysql/">mysql下载网址</a></p>
+<h2 id="2安装">🌸2.安装</h2>
+<p>安装包有两种格式，分别为.zip和.msi，msi需要安装，常用的还是.zip<br>
+以我自己下载的为例，解压到D盘，产生文件夹mysql-8.0.20-winx64<br>
+文件夹内容如下<br>
+<img src="https://nan-yao.github.io/post-images/1597823895023.PNG" alt="" loading="lazy"></p>
+<p>在根目录下创建my.ini (mysql配置文件)<br>
+<img src="https://nan-yao.github.io/post-images/1597824273384.PNG" alt="" loading="lazy"><br>
+文件内容如下（需要将basedir 与 datadir 路径改成mysql的解压路径 ）</p>
+<pre><code>[mysql]
+
+# 设置mysql客户端默认字符集
+default-character-set=utf8 
+
+[mysqld]
+
+#设置3306端口
+port = 3306 
+
+#设置mysql的安装目录（需要根据自己的安装路径更改）
+basedir=D:\mysql-8.0.20-winx64\mysql-8.0.20-winx64
+
+#设置mysql数据库的数据的存放目录（需要根据自己的安装路径更改）
+datadir=D:\mysql-8.0.20-winx64\mysql-8.0.20-winx64\data
+
+#允许最大连接数
+max_connections=200
+
+#服务端使用的字符集默认为8比特编码的latin1字符集
+character-set-server=utf8
+
+#创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+</code></pre>
+<h2 id="3以管理员身份运行cmd">🌸3.以管理员身份运行CMD</h2>
+<p>进入mysql的根目录bin下(&quot;cd &quot;进入指定文件夹)</p>
+<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1597887762269.PNG" alt="" loading="lazy"></figure>
+<p>输入下面命令，回车，第一次输入会等很长一段时间，不要着急，等到出现下一行的时候在根目录下会自动生成一个data文件（很多教程里面会在前面自己建立一个data文件，后来会出现一些问题，不建议这样做）</p>
+<pre><code>mysqld --initialize-insecure --user=mysql
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://nan-yao.github.io/post-images/1597826571746.PNG" alt="" loading="lazy"></figure>
+<p>输入下面命令，回车，会提示安装成功</p>
+<pre><code>mysqld install
+</code></pre>
+<p><img src="https://nan-yao.github.io/post-images/1597827220295.PNG" alt="" loading="lazy"><br>
+(截图是我已经安装过了，第一次安装会提示 Service successfully installed)</p>
+<p>初始化</p>
+<pre><code>mysqld initialize 
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://nan-yao.github.io/post-images/1597827681614.PNG" alt="" loading="lazy"></figure>
+<h2 id="4启动服务">🌸4.启动服务</h2>
+<p>启动服务时输入如下命令，回车，启动成功后如下图<br>
+（如果提示'net' 不是内部或外部命令，也不是可运行的程序或批处理文件，就跳到一开始的c盘管理员下面运行）<br>
+<img src="https://nan-yao.github.io/post-images/1597828223243.PNG" alt="" loading="lazy"><br>
+<img src="https://nan-yao.github.io/post-images/1597828082277.PNG" alt="" loading="lazy"></p>
+<h2 id="5登录">🌸5.登录</h2>
+<p>服务启动成功之后，需要登录的时候输入命令（这个时候如果提示“mysql”不是不是内部或外部命令，也不是可运行的程序或批处理文件，就需要再到bin目录下）</p>
+<pre><code>mysql -u root -p
+</code></pre>
+<p>第一次登录没有密码，直接按回车过</p>
+<figure data-type="image" tabindex="4"><img src="https://nan-yao.github.io/post-images/1597828598503.PNG" alt="" loading="lazy"></figure>
+<h2 id="6退出登录">🌸6.退出登录</h2>
+<p>输入exit，退出登录</p>
+<figure data-type="image" tabindex="5"><img src="https://nan-yao.github.io/post-images/1597829134560.PNG" alt="" loading="lazy"></figure>
+<h2 id="7设置登录密码">🌸7.设置登录密码</h2>
+<p>设置登录密码，在bin目录下输入下面命令</p>
+<pre><code>mysqladmin -u root -p password
+</code></pre>
+<p>一开始的密码直接按回车，然后输入新密码，确认新密码</p>
+<figure data-type="image" tabindex="6"><img src="https://nan-yao.github.io/post-images/1597829610089.PNG" alt="" loading="lazy"></figure>
+<h2 id="注如果出现安装mysql时报错-由于找不到vcruntime140_1dll无法继续执行代码">🌿注：如果出现安装mysql时报错: 由于找不到vcruntime140_1.dll,无法继续执行代码</h2>
+<figure data-type="image" tabindex="7"><img src="https://nan-yao.github.io/post-images/1597885904382.png" alt="" loading="lazy"></figure>
+<p>出现这种情况是因为缺少了动态链接库(.ddl文件), 跟mysql无关, 需要下载一份（我这里下载的是64位版本的）</p>
+<p><a href="https://cn.dll-files.com/vcruntime140_1.dll.html">vcruntime140_1.dll下载地址</a><br>
+<img src="https://nan-yao.github.io/post-images/1597886835685.PNG" alt="" loading="lazy"></p>
+<p>下载最新版本的，解压后将vcruntime140_1.dll复制到C:\Windows\System32即可<br>
+<img src="https://nan-yao.github.io/post-images/1597886482952.PNG" alt="" loading="lazy"><br>
+（32位版本的vcruntime140_1.dll需要复制到C:\Windows\SysWOW64下）</p>
+<h2 id="参考的博客如果有看不懂我写的可以借鉴参考帮助了解">🌾参考的博客（如果有看不懂我写的可以借鉴参考，帮助了解）</h2>
+<p><a href="https://blog.csdn.net/weixin_42869365/article/details/83472466">MySQL下载与安装</a><br>
+<a href="https://blog.csdn.net/weixin_40396510/article/details/79277731">mysql下载与安装过程</a><br>
+<a href="https://blog.csdn.net/BIGyoung8388/article/details/86376187">安装mysql输入net start mysql 出现'net' 不是内部或外部命令,也不是可运行的程序 或批处理文件</a><br>
+<a href="https://blog.csdn.net/shinny195/article/details/82319218">mysql启动失败：mysql服务无法启动 服务没有报告任何错误 解决方法</a></p>
 ]]></content>
     </entry>
     <entry>
