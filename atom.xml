@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-09-05T06:45:09.432Z</updated>
+    <updated>2020-10-12T15:12:53.253Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,6 +10,39 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[趣味算法题]]></title>
+        <id>https://nan-yao.github.io/post/qu-wei-suan-fa-ti/</id>
+        <link href="https://nan-yao.github.io/post/qu-wei-suan-fa-ti/">
+        </link>
+        <updated>2020-09-15T06:48:55.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<ol>
+<li>国王招来100个囚犯，对他们说：你们犯的是死罪，但我给你们一次求生的机会。15分钟以后，你们将被关进一个有100间隔离牢房的监狱里，每人一间牢房，都与外界隔绝，什么也听不见看不到，连时间都没法计算，无法获得外界的任何信息。<br>
+2. 这所监狱有一个院子，每天只少随机（注意是完全随机）打开一间牢房的门，让一个囚犯到院子里来放风。院子里有一盏灯，放风的囚犯可以控制它的开关，将它打开或是关闭。除囚犯之外，其他人都不会去碰开关。这盏灯会永远有充足的能源供应，灯泡和电路不会出故障。  除了开关这盏灯，放风的囚犯放风时留下的任何其它痕迹都会在夜晚被清除干净（包括在灯上作的任何记号）。牢房是完全封闭的，院子里的灯光在牢房里看不到。只有放风到院子里的人才能看到。<br>
+3. 好了现在我向你们提出一个要求，只要你们做到了，就可以全部获得释放：<br>
+4. 给你们15分钟商量你们的方案。15分钟以后，你们将被关进我刚才说的那个监狱，永远无法再交流，被关若干天后，你们中间如果任何一个人能够向我证明你们每个人都至少放风了一次，我就把你们放了，不然永远别想再出来。 好吧！这样吧，如果你们有谁现在可以告诉我这个方法，也就是能够证明你们每人至少放风一次的方法，我马上放掉你们！<br>
+5. 其中一个囚犯想了几分钟，回答了这个问题，国王听后，如自己所说的把他们全部给放了。请问那个囚犯是用什么方法证明的？</li>
+</ol>
+</blockquote>
+<p>分析：1.s首先100百个人里先确定一个计数者去关灯，其他人只负责开，计数到100<br>
+2.当你进入院子里发现灯是关的并且你是第一次进入院子的时候就打开灯，如果灯是开着的或             者你不是第一次进入院子则不改变灯的状态</p>
+<p>设计：灯开为X=1，灯灭为X=0<br>
+开灯人Z=2,其他人第一次进入院子Z=1，否则Z=0<br>
+计数n=1(计数者本身),n++</p>
+<pre><code>if(X=0&amp;Z=1)
+  {
+      X=1;
+      Z=0;
+   }
+if(X=1&amp;Z=2)
+{
+    X=0;
+    n++;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[为什么要赋予思想]]></title>
         <id>https://nan-yao.github.io/post/wei-shi-me-yao-fu-yu-si-xiang/</id>
@@ -58,7 +91,7 @@ HTML  CSS  JavaScript<br>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Mysql的下载与安装]]></title>
+        <title type="html"><![CDATA[Mysql-8.0.20-winx64的下载与安装]]></title>
         <id>https://nan-yao.github.io/post/mysql-de-xia-zai-yu-an-zhuang/</id>
         <link href="https://nan-yao.github.io/post/mysql-de-xia-zai-yu-an-zhuang/">
         </link>
@@ -68,7 +101,7 @@ HTML  CSS  JavaScript<br>
 <h2 id="2安装">🌸2.安装</h2>
 <p>安装包有两种格式，分别为.zip和.msi，msi需要安装，常用的还是.zip<br>
 以我自己下载的为例，解压到D盘，产生文件夹mysql-8.0.20-winx64<br>
-文件夹内容如下<br>
+文件夹内容如下（下载的文件目录最好都是英文的，如果是中文后面安装时在cmd下可能会乱码）<br>
 <img src="https://nan-yao.github.io/post-images/1597823895023.PNG" alt="" loading="lazy"></p>
 <p>在根目录下创建my.ini (mysql配置文件)<br>
 <img src="https://nan-yao.github.io/post-images/1597824273384.PNG" alt="" loading="lazy"><br>
