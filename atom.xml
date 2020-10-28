@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-10-12T15:12:53.253Z</updated>
+    <updated>2020-10-28T15:08:36.842Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -41,6 +41,157 @@ if(X=1&amp;Z=2)
     n++;
 }
 </code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[大数据]]></title>
+        <id>https://nan-yao.github.io/post/da-shu-ju/</id>
+        <link href="https://nan-yao.github.io/post/da-shu-ju/">
+        </link>
+        <updated>2020-09-15T02:35:40.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="一-大数据概述">一、大数据概述</h2>
+<p>1.第三次信息浪潮<br>
+大数据/物联网/云计算<br>
+2.大数据的概念和影响<br>
+1/4V<br>
+数据量大<br>
+数据类型繁多<br>
+处理速度非常快<br>
+价值密度低<br>
+影响：<br>
+云计算：1.解决海量数据的分布式存储以及分布式处理<br>
+2.虚拟化+多租户<br>
+IaaS:基础设施及服务<br>
+PaaS:平台及服务<br>
+SaaS:软件及服务</p>
+<p>物联网：二维码原理</p>
+<h2 id="二-大数据处理架构hadoop">二、大数据处理架构Hadoop</h2>
+<p>1.hadoop简介和版本演变<br>
+haddoop两大核心------HDFS（分布式文件系统）+MapReduce（批量数据分析）<br>
+高可靠性/高效性/高可扩展性/成本低<br>
+Hadoop1.0核心：HDFS+MapReduce<br>
+Hadoop2.0核心：YARN（资源管理和调度框架）+HDFS+MapReduce<br>
+2.haddoop项目结构<br>
+<img src="https://nan-yao.github.io/post-images/1600676225730.PNG" alt="" loading="lazy"><br>
+数据仓库<br>
+pig/(SQL)<br>
+3.linux和hadoop的安装<br>
+4.haddoop集群的部署和使用</p>
+<h2 id="三-分布式文件系统hdfs">三、分布式文件系统HDFS</h2>
+<p>1、分布式文件系统HDFS简介<br>
+实现目标：兼容廉价的硬件设备/实现流数据读写/支持大数据集/支持简单的文件模型/强大的库平台兼容<br>
+自身局限：不适合低延迟数据访问/无法高效存储大量小文件/不支持多用户写入及任意修改文件<br>
+2、HDFS相关概念<br>
+块：<br>
+（支持面向大规模数据存储/降低分布式节点的寻址开销）<br>
+（取消了mapreduce的并行性 ）<br>
+抽象的块的好处：支持大规模文件存储/简化系统设计/适合数据备份<br>
+HDFS两大组件：名称节点/数据节点<br>
+元数据：<br>
+名称节点：FsImage(保持元数据)/EditLog（用来操作元数据）<br>
+冷备份/热备份<br>
+数据节点：<br>
+3、HDFS体系结构<br>
+主节点（管家作用）/数据节点<br>
+HDFS命名空间（目录/文件/块）<br>
+TCP/IP&lt;----（通信协议）----&gt;名称节点&lt;--------&gt;数据节点&lt;----（远程）----RPC<br>
+局限性：命名空间限制/性能的瓶颈/隔离问题/集群的可用性<br>
+4、HDFS的读数据和写数据过程<br>
+1）读数据<br>
+1.打开文件/2.获取数据块信息/3.读取请求/4.读取数据/5.获取数据块信息/6.读取数据/           7.关闭文件<br>
+<img src="https://nan-yao.github.io/post-images/1602040757310.PNG" alt="" loading="lazy"><br>
+2）写数据<br>
+1.创建文件请求/2.创建文件元数据/3.写入数据/4.写入数据包/5.接受数据包/6.关闭文件<br>
+<img src="https://nan-yao.github.io/post-images/1602040786224.PNG" alt="" loading="lazy"></p>
+<pre><code class="language-java">    import 
+</code></pre>
+<p>5、HDFS编程实践<br>
+HDFS常用命令：<br>
+1）shell命令<br>
+hadoop fs  :适用于不同的文件系统，如本地文件系统和HDFS文件系统<br>
+hadoop dfs  :只适用于HDFS文件系统<br>
+hdfs dfs  :只适用于HDFS文件系统<br>
+2）cat显示文件<br>
+3）get远程文件下载到本地<br>
+4）mkdir创建文件</p>
+<h2 id="四-分布式数据库hbase">四、分布式数据库HBase</h2>
+<p>1、HBase简介<br>
+BigTable的开源实现<br>
+高可靠，高性能，面向列，可伸缩的分布式数据库，可以用来存储非结构化和半结构化的松散数据<br>
+HBase访问接口：1.提供一个原生的JAVA API/2.提供SQL类型接口<br>
+<img src="https://nan-yao.github.io/post-images/1602040728972.PNG" alt="" loading="lazy"><br>
+2、HBase数据模型<br>
+HBase是一个稀疏的多维度的排序的映射表<br>
+列族:HBase存储的基本单元（支持动态扩展，保留旧的版本）<br>
+列限定符（name major,email）<br>
+单元格/行键<br>
+时间戳（新旧版本区分）<br>
+数据坐标（数据的定位）<br>
+传统以行存储，HBase以列存储<br>
+3、HBase的原理实现<br>
+HBase功能组件：库函数/master服务器/region服务器<br>
+表<br>
+HBase的三层结构：ZooKeeper文件-----&gt;-root-表-------&gt;.META.表------&gt;用户数据表<br>
+4、HBase运行机制<br>
+storeFile/HLog<br>
+5、HBase应用方案<br>
+性能优化方法：最大版本数<br>
+检测性能：openTSDB/Ambair/Sql<br>
+构建二级HBase索引：coprocessor机制(endpoint/observer)<br>
+6、HBase的安装和编程实践</p>
+<h2 id="五-nosql数据库">五、NoSQL数据库</h2>
+<p>1、NoSQL数据库<br>
+not only SQL(关系数据库与非关系数据库)<br>
+灵活的可扩展性/灵活的数据模型/云计算结合<br>
+2、nosql与关系数据库的比较<br>
+关系数据库：关键--事务一致性（回滚）/数据模型/<br>
+nosql: 非关键---处理数据多<br>
+3、四大类型nosql数据库<br>
+键值数据库（Redis）/列族数据库(HBase)/图数据库(Neo4j)/文档数据库(MongoOB)<br>
+4、nosql数据库的三大理论基石<br>
+1）CAP理论：C：一致性/A：可用性/P：分区可容忍性<br>
+<img src="https://nan-yao.github.io/post-images/1602510296130.PNG" alt="" loading="lazy"><br>
+最多三者取其二<br>
+2）BASE：基本可用/软状态/最终一致性<br>
+<img src="https://nan-yao.github.io/post-images/1602510693257.PNG" alt="" loading="lazy"><br>
+3）最终一致性：因果一致性/“读已之所写”一致性/单调读一致性/会话一致性/单调写一致性<br>
+5、从nosql到NewSQL数据库<br>
+newsql（同时具备nosql和OldSQL数据库优点）：分析性数据<br>
+6、文档数据库MongoDB<br>
+由表转变为文档</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[从自然时代到人工智能]]></title>
+        <id>https://nan-yao.github.io/post/cong-zi-ran-shi-dai-dao-ren-gong-zhi-neng/</id>
+        <link href="https://nan-yao.github.io/post/cong-zi-ran-shi-dai-dao-ren-gong-zhi-neng/">
+        </link>
+        <updated>2020-09-15T02:04:33.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://nan-yao.github.io/post-images/1602038863881.jpg" alt="" loading="lazy"><br>
+一、自然智能<br>
+1.自然智能<br>
+蚂蚁优化算法（最短路径）<br>
+无人驾驶汽车<br>
+人工免疫系统（免疫计算优化学习）<br>
+量子计算<br>
+模拟退火<br>
+专家系统<br>
+遗传算法<br>
+禁忌搜索<br>
+蚁群算法<br>
+粒子群算法<br>
+人工蜂群算法<br>
+化学反应算法<br>
+自然智能分为4类<br>
+生物启发计算/进化计算/群体智能（<a href="https://blog.csdn.net/zhouxinxin0202/article/details/79915873">鲁棒性</a>）/其他<br>
+2.自然计算方法<br>
+3.智能系统包含智能技术<br>
+4.自然计算发展前沿<br>
+二、视听系统和仿生感知<br>
+<a href="https://baike.baidu.com/item/%E4%BB%BF%E7%94%9F%E5%AD%A6">仿生学</a><br>
+建模：生物模型/计算模型/系统模型<br>
+<a href="https://zhuanlan.zhihu.com/p/88898444">计算机视觉</a><br>
+听觉感知：<a href="https://baike.baidu.com/item/%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B/7932524">隐马尔科夫模型</a></p>
 ]]></content>
     </entry>
     <entry>
