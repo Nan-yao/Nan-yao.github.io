@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-11-22T07:30:21.095Z</updated>
+    <updated>2020-11-22T16:08:25.177Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[翻译]]></title>
+        <id>https://nan-yao.github.io/post/fan-yi/</id>
+        <link href="https://nan-yao.github.io/post/fan-yi/">
+        </link>
+        <updated>2020-11-22T08:15:30.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="文化">文化</h3>
+<p>cultural heritage 文化遗产<br>
+a symbol of 象征着<br>
+classical 经典的<br>
+prosperity 繁荣<br>
+Dynasty 朝代<br>
+century 世纪<br>
+unique 独特<br>
+appreciate 欣赏<br>
+ancient 古代<br>
+cuisine 菜系<br>
+BC 公元前<br>
+emperor 君主<br>
+be known as 被誉为<br>
+hundreds of 成百上千的<br>
+tens of thousands of  成千上万的</p>
+<h3 id="中国现代">中国现代</h3>
+<p>age of population 人口老龄化<br>
+industry 工厂<br>
+corporate 企业<br>
+economy 经济<br>
+pay more and more attention to 越来越关注<br>
+make full use of 充分利用<br>
+public 公共的<br>
+environment 环境<br>
+convenient 方便<br>
+satisfy /.v满足（satisfied 满足的）<br>
+ecosystem 生态系统<br>
+biodiversity 生物多样性<br>
+a great variety 种类繁多 /lots of 许多的（a lot of ）<br>
+service 服务 (self-service 自助服务)</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[不想背单词（三）]]></title>
         <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-san/</id>
@@ -26,7 +65,18 @@ spur /.v鼓舞，激励（spurring）<br>
 vibrant 充满生机的<br>
 ingredient 成分<br>
 integrate 合并<br>
-hazard 危险/dangerous</p>
+hazard 危险/dangerous<br>
+trial 实验，审讯<br>
+solution 解决方法<br>
+crucial 关键性的<br>
+vaccine 疫苗（pandemic 流行病）<br>
+gather 收集，集合<br>
+transmission 传送，传染<br>
+immuse system 免疫系统<br>
+mult 多元的（multcultural 多元文化）<br>
+heroic 英雄的（hero）<br>
+despite 尽管<br>
+hesitate 犹豫</p>
 ]]></content>
     </entry>
     <entry>
@@ -480,55 +530,6 @@ default-storage-engine=INNODB
 <a href="https://blog.csdn.net/weixin_40396510/article/details/79277731">mysql下载与安装过程</a><br>
 <a href="https://blog.csdn.net/BIGyoung8388/article/details/86376187">安装mysql输入net start mysql 出现'net' 不是内部或外部命令,也不是可运行的程序 或批处理文件</a><br>
 <a href="https://blog.csdn.net/shinny195/article/details/82319218">mysql启动失败：mysql服务无法启动 服务没有报告任何错误 解决方法</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[不要温和地走进那个良夜]]></title>
-        <id>https://nan-yao.github.io/post/bu-yao-wen-he-di-zou-jin-na-ge-liang-ye/</id>
-        <link href="https://nan-yao.github.io/post/bu-yao-wen-he-di-zou-jin-na-ge-liang-ye/">
-        </link>
-        <updated>2020-05-31T06:03:11.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="do-not-go-gentle-into-that-good-night">Do Not Go Gentle into That Good Night</h2>
-<iframe src="//player.bilibili.com/player.html?aid=18007752&bvid=BV1eW411B7D8&cid=29401405&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-<p>Do not go to gentle into that good night,<br>
-Old age should burn and rave at close of day;<br>
-Rage,rage against the dying of the light.</p>
-<p>不要温和的走进那个良夜，<br>
-白昼将尽，暮年仍应燃烧咆哮；<br>
-怒斥吧，怒斥光的消逝。</p>
-<p>Though wise men at their end know dark is right,<br>
-Because their words had forked no lightning they<br>
-Do not go gentle into that good night.</p>
-<p>虽然在白昼尽头，智者自知该踏上夜途，<br>
-因为语言未曾迸发出电光，他们<br>
-不要温和地走进那个良夜</p>
-<p>Good man,the last wave by,crying how bright<br>
-their frail deeds might have danced in a green bay<br>
-Rage,rage against the dying of the light.</p>
-<p>好人，当最后一浪过去，高呼着他们脆弱的善行<br>
-本来也许可以在绿湾上快意地舞蹈，<br>
-所以，他们怒斥，怒斥光的消逝。</p>
-<p>wild man who caught and sang the sun in flight.<br>
-And learn,too late,they grieved it on its way,<br>
-Do not go gentle into that good night.</p>
-<p>狂人抓住稍纵即逝的阳光，为之歌唱，<br>
-并意识到，太迟了，他们过去总为时光伤逝，<br>
-不要温和地走进那个良夜。</p>
-<p>Grave men,near death,who see with blinding sight<br>
-Blind eyes could blaze like meteors and be gay,<br>
-Rage,rage against the dying of the light.</p>
-<p>严肃的人，在生命尽头，用模糊的双眼看到<br>
-失明的眼可以像流星般闪耀，欢欣雀跃，<br>
-所以，他们怒斥，怒斥光的消逝。</p>
-<p>And you,my father,there on the sad height,<br>
-Curse,bless,me now with your fierce tears,I pray.<br>
-Do not go gentle into that good night.<br>
-Rage,rage against the dying of the light.</p>
-<p>而您，我的父亲，在生命那悲哀之极，<br>
-我求您现在用您的热泪诅咒我，祝福我吧<br>
-不要温和地走进那个良夜。<br>
-怒斥吧，怒斥光的消逝。</p>
-<p>--Dylan Thomas 《不要温和地走进那个良夜》</p>
 ]]></content>
     </entry>
 </feed>
