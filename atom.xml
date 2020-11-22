@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-11-21T14:14:33.656Z</updated>
+    <updated>2020-11-22T07:30:21.095Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[不想背单词（三）]]></title>
+        <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-san/</id>
+        <link href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-san/">
+        </link>
+        <updated>2020-11-22T06:05:39.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1606028290420.jpg" alt="" loading="lazy"></figure>
+<p>intersection 交点，十字路口<br>
+innovation 改革<br>
+assist 帮助<br>
+declare 宣布，表明<br>
+proper 正确的<br>
+spur /.v鼓舞，激励（spurring）<br>
+vibrant 充满生机的<br>
+ingredient 成分<br>
+integrate 合并<br>
+hazard 危险/dangerous</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[不想背单词（二）]]></title>
         <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-er/</id>
@@ -510,19 +529,6 @@ Rage,rage against the dying of the light.</p>
 不要温和地走进那个良夜。<br>
 怒斥吧，怒斥光的消逝。</p>
 <p>--Dylan Thomas 《不要温和地走进那个良夜》</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[电子书查找]]></title>
-        <id>https://nan-yao.github.io/post/dian-zi-shu-cha-zhao/</id>
-        <link href="https://nan-yao.github.io/post/dian-zi-shu-cha-zhao/">
-        </link>
-        <updated>2020-05-22T13:35:16.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1鳩摩搜索">1.🐤<a href="https://www.jiumodiary.com/">鳩摩搜索</a></h2>
-<p>一个非常好的网站去查找一些电子书，支持百度网盘下载和直接下载，同时这个网站也配套了一些相关内容的学习视频以及书籍配套答案和笔记，缺点是你不能在这个网站上具体看到书籍的内容类似封面和介绍这种。</p>
-<h2 id="2lorefree">2.🐤<a href="https://ebook2.lorefree.com/">LoreFree</a></h2>
-<p>书籍非常多，能够看到书籍的介绍和撰写人，但是配套的资源不齐全，与鳩摩搜索能够互补的一个网站<br>
-<img src="https://nan-yao.github.io/post-images/1590156427738.gif" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
