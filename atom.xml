@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-11-27T12:59:57.158Z</updated>
+    <updated>2020-11-27T13:45:12.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,6 +10,28 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[不想背单词（五）]]></title>
+        <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-wu/</id>
+        <link href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-wu/">
+        </link>
+        <updated>2020-11-27T13:36:34.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1606484294280.gif" alt="" loading="lazy"></figure>
+<p>faith 信念<br>
+faithful 忠诚的<br>
+correpondence 通信<br>
+response 回答<br>
+mult ----前缀，多重<br>
+multiple 多重的<br>
+match 匹配，满足，比赛<br>
+introductory 入门的，初级的（introduction 介绍）<br>
+apparently 显然<br>
+sepecifically 特有的<br>
+especially 尤其，特别的<br>
+particularly 特别，尤其<br>
+foundation 基础</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[不想背单词(四)]]></title>
         <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-si/</id>
@@ -456,29 +478,5 @@ newsql（同时具备nosql和OldSQL数据库优点）：分析性数据<br>
 命运 就是那双手<br>
 那么我们 为什么要被赋予思想</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26830207&auto=1&height=66"></iframe>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于学习]]></title>
-        <id>https://nan-yao.github.io/post/guan-yu-xue-xi/</id>
-        <link href="https://nan-yao.github.io/post/guan-yu-xue-xi/">
-        </link>
-        <updated>2020-07-17T07:44:13.000Z</updated>
-        <content type="html"><![CDATA[<p>有一个引导的朋友好像放弃了，但是自己还是想要坚持（如果这位看见了，还是希望能回来哈🍡）<br>
-自学计算机的一个网址,可以点进去看一下哈👇<br>
-<a href="https://github.com/keithnull/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md">TeachYourselfCS-CN</a></p>
-<p>课程</p>
-<h2 id="已学">已学</h2>
-<p>高等数学   线性代数  概率论与数理统计<br>
-C语言  python  Java  汇编语言<br>
-模电   数电<br>
-数据结构  计算机基础  离散数学<br>
-医药信息学  医药学基础</p>
-<h2 id="在学">在学</h2>
-<p>计算机网络</p>
-<h2 id="计划">计划</h2>
-<p>计算机组成原理（👉《深入了解计算机系统》）   计算机操作系统  计算机编译原路  数据结构与算法<br>
-HTML  CSS  JavaScript<br>
-数据库   分布式系统（👉《数据密集型应用系统设计》）</p>
-]]></content>
     </entry>
 </feed>
