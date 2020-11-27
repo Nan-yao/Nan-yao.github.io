@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-11-27T12:50:36.409Z</updated>
+    <updated>2020-11-27T12:59:57.158Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -40,7 +40,8 @@ rigor 严格，严酷</p>
         <link href="https://nan-yao.github.io/post/fan-yi/">
         </link>
         <updated>2020-11-22T08:15:30.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="文化">文化</h3>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1606481985314.png" alt="" loading="lazy"></figure>
+<h3 id="文化">文化</h3>
 <p>cultural heritage 文化遗产<br>
 a symbol of 象征着<br>
 classical 经典的<br>
