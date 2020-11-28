@@ -16,7 +16,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://nan-yao.github.io/images/avatar.png?v=1606484710176" style="width:127px;" />
+     <img src="https://nan-yao.github.io/images/avatar.png?v=1606570237197" style="width:127px;" />
 
      <div class="description">
       <p>愿你的国降临</p>
@@ -83,8 +83,80 @@
         <h3><a>T-SQL(Transact-SQL)</a></h3>
        </div>
        <div class="post-content">
-        <p>T-SQL是在标准SQL语句的基础上增加了<table><tr><td bgcolor='	#FFC0CB'>用于控制程序执行顺序</table></tr></td></font>的语句</p>
-<p>聚合不应出现在 WHERE 子句中，除非该聚合位于 HAVING 子句或选择列表所包含</p>
+        <!-- more -->
+<p>T-SQL是在标准SQL语句的基础上增加了<font color='	#FFC0CB'>用于控制程序执行顺序</font>的语句<br>
+（一）数据定义语言<br>
+CREATE/ALTER/DROP<br>
+（二）数据操纵语言<br>
+SELECT/INSERT/UPDATA/DELETE<br>
+（三）数据控制语言<br>
+CRANT/REVOKE/DENY</p>
+<h2 id="常量">常量</h2>
+<p>一旦确定，值不可变</p>
+<h2 id="变量局部变量全局变量">变量（局部变量/全局变量）</h2>
+<p>值可以改变</p>
+<h4 id="局部变量">🐸局部变量</h4>
+<p>声明局部变量需要使用<strong> DECLARE</strong>语句</p>
+<pre><code class="language-sql">DECLARE
+{
+    {
+         {@local_variable [as] data_type} -----@local_variabke变量名，必须以@开头 ，/// data_type 变量类型
+          | [=value] -----为变量赋值，必须数据类型匹配
+         } 
+   |  {@cursor_variable_name cursor}   -----@cursor_variable_name游标变量名称
+} [,...n]      ------对多个变量进行赋值
+| {
+     @tabel_variable_name [as] &lt;table_type_definition&gt;
+} -----定义表类型变量的名称和数据类型，注意，声明表类型变量时必须时改语句中声明的唯一变量
+</code></pre>
+<p>例如：<br>
+声明变量和赋值变量</p>
+<pre><code class="language-sql">declare @cirditid char(18)='0000000000000'  ----声明变量时赋初值
+declare @id int,@name varchar(20),@sex char(2),@brithday datetime
+set  @id=1001 -----set添加单个数据
+select @name='小小'
+select @sex='女',@brithday='1998/6/24' ------select添加多条数据
+select @id '学号',@name '姓名',@sex '性别',@brithday '出生日期',@cirditid '身份证号' -----给每个变量取别名并显示
+
+</code></pre>
+<img style="float: center;" src="D:/Grdea/gridea配置文件/post-images/1606554706458.PNG" width=500 height=400>
+<h4 id="全局变量">🐸全局变量</h4>
+<p>一般由系统自身提供，不允许用户自定义，使用@@定义</p>
+<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1606556974935.gif" alt="" loading="lazy"></figure>
+<h2 id="运算符">运算符</h2>
+<p>主要分为 赋值运算符/算术运算符/字符串连接运算符/比较运算符/逻辑运算符/一元运算符/位运算符</p>
+<h4 id="赋值运算符">🐟赋值运算符</h4>
+<pre><code class="language-sql">'='
+</code></pre>
+<p>1.直接赋值<br>
+2.表达式建立联系</p>
+<h4 id="算术运算符">🐟算术运算符</h4>
+<pre><code class="language-sql">'+'  '-'  '*'  '/'  '%'（取模）
+</code></pre>
+<h4 id="字符串连接运算符">🐟字符串连接运算符</h4>
+<pre><code class="language-sql">'+' 连接的两边必须是字符串类型
+</code></pre>
+<h4 id="比较运算符">🐟比较运算符</h4>
+<pre><code class="language-sql">'='  '&gt;'  '&lt;'  '&gt;='  '&lt;='  
+'&lt;&gt;'不等于 
+'!='不等于
+'!&gt;'不大于  
+'!&lt;'不小于
+</code></pre>
+<h4 id="逻辑运算符逻辑运算符返回值为trurfalse">🐟逻辑运算符（逻辑运算符返回值为TRUR/FALSE）</h4>
+<figure data-type="image" tabindex="2"><img src="https://nan-yao.github.io/post-images/1606557801914.PNG" alt="" loading="lazy"></figure>
+<h4 id="一元运算符">🐟一元运算符</h4>
+<pre><code class="language-sql">+ -----正
+-  -----负
+~ -----按位取反
+</code></pre>
+<h4 id="位运算符">🐟位运算符</h4>
+<figure data-type="image" tabindex="3"><img src="https://nan-yao.github.io/post-images/1606561836289.PNG" alt="" loading="lazy"></figure>
+<h4 id="运算符优先级">🐟运算符优先级</h4>
+<p><font color='#FFC0CB'>注意括号能够改变优先级</font></p>
+<figure data-type="image" tabindex="4"><img src="https://nan-yao.github.io/post-images/1606561881312.PNG" alt="" loading="lazy"></figure>
+<img style="float: center;" src="D:/Grdea/gridea配置文件/post-images/1606562042546.gif" width=400 height=200>
+<h2 id="控制语句">控制语句</h2>
 
        </div>
        <div class="post-footer">
@@ -93,6 +165,8 @@
           <i class="fa fa-sun-o"></i>
           <span class="date">2020-11-24</span>
           <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://nan-yao.github.io/tag/5Q3s2U_uL/" title="数据库">数据库 </a>
           
          </div>
         </div>
