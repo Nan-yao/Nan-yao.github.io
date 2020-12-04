@@ -16,7 +16,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://nan-yao.github.io/images/avatar.png?v=1606738549797" style="width:127px;" />
+     <img src="https://nan-yao.github.io/images/avatar.png?v=1607074392191" style="width:127px;" />
 
      <div class="description">
       <p>愿你的国降临</p>
@@ -157,6 +157,57 @@ select @id '学号',@name '姓名',@sex '性别',@brithday '出生日期',@cirdi
 <figure data-type="image" tabindex="4"><img src="https://nan-yao.github.io/post-images/1606561881312.PNG" alt="" loading="lazy"></figure>
 <img style="float: center;" src="D:/Grdea/gridea配置文件/post-images/1606562042546.gif" width=400 height=200>
 <h2 id="控制语句">控制语句</h2>
+<p>🌼注释语句</p>
+<pre><code class="language-sql">-------单行通过连字符--来注释
+/*...这里是多行注释内容·....*/
+</code></pre>
+<p>🌼语句块</p>
+<pre><code class="language-sql">BEGIN{ 
+}
+END
+</code></pre>
+<p>🌼IF语句</p>
+<pre><code class="language-sql">if(){
+
+}else{}
+</code></pre>
+<p>🌼CASE语句</p>
+<pre><code class="language-sql">case()                ----------------简单case语句
+      when....then...
+        .......            ---------------一组简单表达式
+      when....then...
+      else...
+end
+</code></pre>
+<pre><code class="language-sql">case                ----------------case搜索语句
+      when....then...
+        .......            ---------------一组简单表达式
+      when....then...
+      else...
+end
+</code></pre>
+<p>🌼WHILE语句（循环语句）</p>
+<pre><code class="language-sql">while()
+begin----------------开始循环
+     ....
+     break--------------强制跳出循环
+     .....
+     continue-------循环重新开始，不进行后面语句
+     .......
+end------------------结束循环
+</code></pre>
+<p>🌼TRY----CATCH(捕捉错误语句)</p>
+<pre><code class="language-sql"> begin try
+      .......
+ end try
+ begin catch
+      .......
+ end catch
+</code></pre>
+<p>🌼WAITFOR语句<br>
+延迟语句到指定时间执行<br>
+🌼GOTO语句（会破坏程序化结构语句，尽量避免使用）<br>
+用于将语句直接跳转到标签处</p>
 
        </div>
        <div class="post-footer">

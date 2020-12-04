@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-11-30T12:15:53.031Z</updated>
+    <updated>2020-12-04T09:33:20.355Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -11,12 +11,44 @@
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
     <entry>
-        <title type="html"><![CDATA[奇怪]]></title>
-        <id>https://nan-yao.github.io/post/qi-guai/</id>
-        <link href="https://nan-yao.github.io/post/qi-guai/">
+        <title type="html"><![CDATA[不想背单词（七）]]></title>
+        <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-qi/</id>
+        <link href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-qi/">
         </link>
-        <updated>2020-11-30T12:09:39.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1606738218146.webp" alt="" loading="lazy"></figure>
+        <updated>2020-12-04T08:50:01.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1607074240968.PNG" alt="" loading="lazy"></figure>
+<blockquote>
+<blockquote>
+<p>Never let your persistence and passion turn into stubbornness and ignorance<br>
+-------------永远不要让你的坚持和激情变成固执和无知</p>
+</blockquote>
+</blockquote>
+<p>domion 多米诺骨牌<br>
+emission /.n排放物/.n发出射出，排放<br>
+endorse （公开）赞同<br>
+tax 税收<br>
+divident 红利</p>
+<h4 id="citizen-公民">citizen 公民</h4>
+<p>combine 使结合<br>
+argeement /.n协议/.n看法一致<br>
+adjustment  调节<br>
+barrier  障碍<br>
+commit 犯罪<br>
+hasten 加速</p>
+<h4 id="policy-政策">policy 政策</h4>
+<p>degree 程度，学位<br>
+solution  方案，策略<br>
+optimism 乐观<br>
+pessimistic 悲观<br>
+carbon 碳<br>
+mobilize 动员<br>
+equitable 公平的（equity）<br>
+passion 激情</p>
+<p>revolution 革命<br>
+contradict 反驳</p>
+<h4 id="principle-原则in-principle-原则上">principle 原则（in principle 原则上）</h4>
+<h4 id="persistence-坚持">persistence 坚持</h4>
+<p>ignorance 无知</p>
 ]]></content>
     </entry>
     <entry>
@@ -25,8 +57,7 @@
         <link href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-liu/">
         </link>
         <updated>2020-11-28T13:01:39.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://nan-yao.github.io/post-images/1606738539246.gif" alt="" loading="lazy"></figure>
-<p>imply 暗示<br>
+        <content type="html"><![CDATA[<p>imply 暗示<br>
 inferred 推断<br>
 critics 批判者<br>
 sceptical 怀疑的/skeptiacl/doubtful<br>
