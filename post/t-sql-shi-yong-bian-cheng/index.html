@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>T-SQL实用编程 | Nan的小屋</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://nan-yao.github.io/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+ </head>
+
+ <body>
+
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://nan-yao.github.io/images/avatar.png?v=1607168893229" style="width:127px;" />
+
+     <div class="description">
+      <p>愿你的国降临</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a><iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=2918593633/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://nogymx.bandcamp.com/track/visions-of-gideon-nogymx-remix">Visions of Gideon (NOGYMX Remix) by NOGYMX</a></iframe>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="https://nan-yao.github.io/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>T-SQL实用编程</a></h3>
+       </div>
+       <div class="post-content">
+        <h2 id="一-用户自定义函数使用create-function-语句">一、用户自定义函数（使用CREATE FUNCTION 语句)</h2>
+<h3 id="用户定义函数简介">🍖用户定义函数简介</h3>
+<h5 id="允许执行的语句">允许执行的语句</h5>
+<pre><code>- DECLARE 语句，用于定义函数局部变量和游标
+- 除了TRY...CATCH语句之外其他的流程控制语句
+- SELECT 语句，包含具有函数的局部变量的表达式的选择列表
+- EXECUTE语句，用于调用存储过程
+- 为函数局部变量赋值的语句,SET,INSERT,UPDATE,DELETE等
+- 游标操作 ,该操作引用在函数中声明、打卡、关闭、和释放的局部游标（不允许使用FETCH语句将数据返回到客户端，仅允许使用FETCH语句通过INTO字句给局部变量赋值）
+</code></pre>
+<h5 id="不允许执行的语句">不允许执行的语句</h5>
+<pre><code>  - 数据库表的修改
+  - 对不在函数上的局部游标进行操作
+  - 发送电子邮件
+  - 尝试修改目录
+  - 生成返回给用户的结果集
+</code></pre>
+<h3 id="标量值函数函数返回单个值">🍖标量值函数（函数返回单个值）</h3>
+<p>函数返回的类型<strong>不能</strong>为texe,ntext,image,cursor,timestamp,table<br>
+创建语法如下</p>
+<pre><code class="language-sql">    create function function_name( [{@parameter_name parameter_type }],[...n])------@parameter_name 输入参数名
+    returns scalar_return_data_type -------定义函数返回类型
+    [with encryption]--------指创建函数的选项，如果为encryption，表明创建的函数是加密的
+    as
+    begin
+        function_body                       ---------函数体
+        return scalar_expression       ---------函数返回值
+    end
+</code></pre>
+<p>创建一个由学生学号获取系部主任姓名的函数，如下</p>
+<pre><code class="language-sql">    use studentsys
+    go
+    create function getname(@sno char(5))
+    returns varchar(10)
+    as 
+    begin
+        declare @dno int,@tno char(4),@techname varchar(10)='无'
+        set @dno=(select dno from student where sno=@sno)
+        set @tno=(select dmagetno from dept where dno=@dno)
+        set @techname=(select tname from teacher where tno=@tno)
+        return @techname
+    end
+    
+
+    select getname('00123') '00123的系主任'
+</code></pre>
+<h3 id="表值函数函数返回一个表">🍖表值函数（函数返回一个表)</h3>
+<p><strong>内联式表值函数</strong>不使用begin....end包含的语句块，直接使用return 子句将表返回</p>
+<pre><code class="language-sql">    create function getclassname(@dname varchar(20))
+    returns table
+    as 
+    return( 
+        select cno '课程编号',cname '名称',credit '学分'
+        from course c join dept d on c.dno=d.dno
+        where d.dname=@dname
+    )
+
+
+    select * from getclassname('计算机')
+</code></pre>
+<h3 id="修改和删除函数">🍖修改和删除函数</h3>
+<p>修改 -------ALTER function<br>
+删除 -------DROP function</p>
+<h2 id="二-系统函数">二、系统函数</h2>
+<h3 id="数学函数">🍨数学函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABS()</td>
+<td>返回数值表达式的绝对值</td>
+</tr>
+<tr>
+<td>EXP()</td>
+<td>返回指定表达式以e为底的指数</td>
+</tr>
+<tr>
+<td>CEILING()</td>
+<td>返回大于或等于数值表达式的最小整数</td>
+</tr>
+<tr>
+<td>FLOOR()</td>
+<td>返回小于或等于数值表达式的最大整数</td>
+</tr>
+<tr>
+<td>LN()</td>
+<td>返回数值表达式的自然对数</td>
+</tr>
+<tr>
+<td>LOG()</td>
+<td>返回数值表达式以10为底的对数</td>
+</tr>
+<tr>
+<td>POWER()</td>
+<td>返回对数值表达式进行幂运算的结果</td>
+</tr>
+<tr>
+<td>RAND()</td>
+<td>返回一个介于0-1之间的伪随机float值</td>
+</tr>
+<tr>
+<td>ROUND()</td>
+<td>返回舍入到指定长度或精度的数值表达式</td>
+</tr>
+<tr>
+<td>SIGN()</td>
+<td>返回数值表达式的正负号（或者0）</td>
+</tr>
+<tr>
+<td>SQUARE()</td>
+<td>返回数值表达式的平方</td>
+</tr>
+<tr>
+<td>SQRT()</td>
+<td>返回数值表达式的平方根</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串函数">🍨字符串函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASCII()</td>
+<td>返回最左边字符的数值</td>
+</tr>
+<tr>
+<td>CHAR()</td>
+<td>返回每个传递的整数的字符</td>
+</tr>
+<tr>
+<td>LEFT()</td>
+<td>返回指定的最左边的字符数</td>
+</tr>
+<tr>
+<td>LEN()</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>LOWER()</td>
+<td>将大写字符数据以小写返回参数</td>
+</tr>
+<tr>
+<td>LTRIM()</td>
+<td>删除字符串左边空格</td>
+</tr>
+<tr>
+<td>REPLICATE()</td>
+<td>复制函数</td>
+</tr>
+<tr>
+<td>REPLACE()</td>
+<td>替换指定字符串的出现</td>
+</tr>
+<tr>
+<td>RIGHT()</td>
+<td>返回指定的最右边字符数</td>
+</tr>
+<tr>
+<td>RTRIM()</td>
+<td>删除尾随空格</td>
+</tr>
+<tr>
+<td>STR()</td>
+<td>数字转化为字符</td>
+</tr>
+<tr>
+<td>SPACE()</td>
+<td>返回指定数目个空格的字符串</td>
+</tr>
+<tr>
+<td>SUBSTRING()</td>
+<td>求字串函数</td>
+</tr>
+<tr>
+<td>UPPER()</td>
+<td>将小写字符转换为大写</td>
+</tr>
+</tbody>
+</table>
+<h3 id="聚合函数">🍨聚合函数</h3>
+<h3 id="数据类型转化函数">🍨数据类型转化函数</h3>
+<p>CAST()和CONVERT()</p>
+<pre><code class="language-sql">   --------------CAST函数
+   CAST(expression as data_type[(length)])
+
+   print '随机数：'+cast(rand() as char(50))
+   --------------CONVERT函数
+   CONVERT(data_type[(length) , expression])
+
+  print '随机数：' + convert(char(50),rand())
+</code></pre>
+<h3 id="日期和时间函数">🍨日期和时间函数</h3>
+<h2 id="数据库游标">数据库游标</h2>
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2020-12-05</span>
+          <i class="fa fa-tag"></i>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://nan-yao.github.io/post/t-sql-shi-yong-bian-cheng/,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-hai-yang/" title=" 不想背单词（海洋）">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://nan-yao.github.io/media/scripts/jquery.js"></script>
+  <script src="https://nan-yao.github.io/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://nan-yao.github.io/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
