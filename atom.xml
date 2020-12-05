@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-12-05T11:48:18.859Z</updated>
+    <updated>2020-12-05T11:49:28.062Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,218 +10,6 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
-    <entry>
-        <title type="html"><![CDATA[T-SQL实用编程]]></title>
-        <id>https://nan-yao.github.io/post/t-sql-shi-yong-bian-cheng/</id>
-        <link href="https://nan-yao.github.io/post/t-sql-shi-yong-bian-cheng/">
-        </link>
-        <updated>2020-12-05T06:23:20.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="一-用户自定义函数使用create-function-语句">一、用户自定义函数（使用CREATE FUNCTION 语句)</h2>
-<h3 id="用户定义函数简介">🍖用户定义函数简介</h3>
-<h5 id="允许执行的语句">允许执行的语句</h5>
-<pre><code>- DECLARE 语句，用于定义函数局部变量和游标
-- 除了TRY...CATCH语句之外其他的流程控制语句
-- SELECT 语句，包含具有函数的局部变量的表达式的选择列表
-- EXECUTE语句，用于调用存储过程
-- 为函数局部变量赋值的语句,SET,INSERT,UPDATE,DELETE等
-- 游标操作 ,该操作引用在函数中声明、打卡、关闭、和释放的局部游标（不允许使用FETCH语句将数据返回到客户端，仅允许使用FETCH语句通过INTO字句给局部变量赋值）
-</code></pre>
-<h5 id="不允许执行的语句">不允许执行的语句</h5>
-<pre><code>  - 数据库表的修改
-  - 对不在函数上的局部游标进行操作
-  - 发送电子邮件
-  - 尝试修改目录
-  - 生成返回给用户的结果集
-</code></pre>
-<h3 id="标量值函数函数返回单个值">🍖标量值函数（函数返回单个值）</h3>
-<p>函数返回的类型<strong>不能</strong>为texe,ntext,image,cursor,timestamp,table<br>
-创建语法如下</p>
-<pre><code class="language-sql">    create function function_name( [{@parameter_name parameter_type }],[...n])------@parameter_name 输入参数名
-    returns scalar_return_data_type -------定义函数返回类型
-    [with encryption]--------指创建函数的选项，如果为encryption，表明创建的函数是加密的
-    as
-    begin
-        function_body                       ---------函数体
-        return scalar_expression       ---------函数返回值
-    end
-</code></pre>
-<p>创建一个由学生学号获取系部主任姓名的函数，如下</p>
-<pre><code class="language-sql">    use studentsys
-    go
-    create function getname(@sno char(5))
-    returns varchar(10)
-    as 
-    begin
-        declare @dno int,@tno char(4),@techname varchar(10)='无'
-        set @dno=(select dno from student where sno=@sno)
-        set @tno=(select dmagetno from dept where dno=@dno)
-        set @techname=(select tname from teacher where tno=@tno)
-        return @techname
-    end
-    
-
-    select getname('00123') '00123的系主任'
-</code></pre>
-<h3 id="表值函数函数返回一个表">🍖表值函数（函数返回一个表)</h3>
-<p><strong>内联式表值函数</strong>不使用begin....end包含的语句块，直接使用return 子句将表返回</p>
-<pre><code class="language-sql">    create function getclassname(@dname varchar(20))
-    returns table
-    as 
-    return( 
-        select cno '课程编号',cname '名称',credit '学分'
-        from course c join dept d on c.dno=d.dno
-        where d.dname=@dname
-    )
-
-
-    select * from getclassname('计算机')
-</code></pre>
-<h3 id="修改和删除函数">🍖修改和删除函数</h3>
-<p>修改 -------ALTER function<br>
-删除 -------DROP function</p>
-<h2 id="二-系统函数">二、系统函数</h2>
-<h3 id="数学函数">🍨数学函数</h3>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ABS()</td>
-<td>返回数值表达式的绝对值</td>
-</tr>
-<tr>
-<td>EXP()</td>
-<td>返回指定表达式以e为底的指数</td>
-</tr>
-<tr>
-<td>CEILING()</td>
-<td>返回大于或等于数值表达式的最小整数</td>
-</tr>
-<tr>
-<td>FLOOR()</td>
-<td>返回小于或等于数值表达式的最大整数</td>
-</tr>
-<tr>
-<td>LN()</td>
-<td>返回数值表达式的自然对数</td>
-</tr>
-<tr>
-<td>LOG()</td>
-<td>返回数值表达式以10为底的对数</td>
-</tr>
-<tr>
-<td>POWER()</td>
-<td>返回对数值表达式进行幂运算的结果</td>
-</tr>
-<tr>
-<td>RAND()</td>
-<td>返回一个介于0-1之间的伪随机float值</td>
-</tr>
-<tr>
-<td>ROUND()</td>
-<td>返回舍入到指定长度或精度的数值表达式</td>
-</tr>
-<tr>
-<td>SIGN()</td>
-<td>返回数值表达式的正负号（或者0）</td>
-</tr>
-<tr>
-<td>SQUARE()</td>
-<td>返回数值表达式的平方</td>
-</tr>
-<tr>
-<td>SQRT()</td>
-<td>返回数值表达式的平方根</td>
-</tr>
-</tbody>
-</table>
-<h3 id="字符串函数">🍨字符串函数</h3>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ASCII()</td>
-<td>返回最左边字符的数值</td>
-</tr>
-<tr>
-<td>CHAR()</td>
-<td>返回每个传递的整数的字符</td>
-</tr>
-<tr>
-<td>LEFT()</td>
-<td>返回指定的最左边的字符数</td>
-</tr>
-<tr>
-<td>LEN()</td>
-<td>返回字符串的长度</td>
-</tr>
-<tr>
-<td>LOWER()</td>
-<td>将大写字符数据以小写返回参数</td>
-</tr>
-<tr>
-<td>LTRIM()</td>
-<td>删除字符串左边空格</td>
-</tr>
-<tr>
-<td>REPLICATE()</td>
-<td>复制函数</td>
-</tr>
-<tr>
-<td>REPLACE()</td>
-<td>替换指定字符串的出现</td>
-</tr>
-<tr>
-<td>RIGHT()</td>
-<td>返回指定的最右边字符数</td>
-</tr>
-<tr>
-<td>RTRIM()</td>
-<td>删除尾随空格</td>
-</tr>
-<tr>
-<td>STR()</td>
-<td>数字转化为字符</td>
-</tr>
-<tr>
-<td>SPACE()</td>
-<td>返回指定数目个空格的字符串</td>
-</tr>
-<tr>
-<td>SUBSTRING()</td>
-<td>求字串函数</td>
-</tr>
-<tr>
-<td>UPPER()</td>
-<td>将小写字符转换为大写</td>
-</tr>
-</tbody>
-</table>
-<h3 id="聚合函数">🍨聚合函数</h3>
-<h3 id="数据类型转化函数">🍨数据类型转化函数</h3>
-<p>CAST()和CONVERT()</p>
-<pre><code class="language-sql">   --------------CAST函数
-   CAST(expression as data_type[(length)])
-
-   print '随机数：'+cast(rand() as char(50))
-   --------------CONVERT函数
-   CONVERT(data_type[(length) , expression])
-
-  print '随机数：' + convert(char(50),rand())
-</code></pre>
-<h3 id="日期和时间函数">🍨日期和时间函数</h3>
-<h2 id="数据库游标">数据库游标</h2>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[不想背单词（海洋）]]></title>
         <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-hai-yang/</id>
@@ -603,6 +391,39 @@ predict 预言</p>
 <h4 id="silver-bullet-比喻新技术良方">silver bullet 比喻新技术.良方</h4>
 <p>climate 气候</p>
 <h4 id="scale-规模scary-害怕">scale 规模（scary 害怕）</h4>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[趣味算法题]]></title>
+        <id>https://nan-yao.github.io/post/qu-wei-suan-fa-ti/</id>
+        <link href="https://nan-yao.github.io/post/qu-wei-suan-fa-ti/">
+        </link>
+        <updated>2020-09-15T06:48:55.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<ol>
+<li>国王招来100个囚犯，对他们说：你们犯的是死罪，但我给你们一次求生的机会。15分钟以后，你们将被关进一个有100间隔离牢房的监狱里，每人一间牢房，都与外界隔绝，什么也听不见看不到，连时间都没法计算，无法获得外界的任何信息。<br>
+2. 这所监狱有一个院子，每天只少随机（注意是完全随机）打开一间牢房的门，让一个囚犯到院子里来放风。院子里有一盏灯，放风的囚犯可以控制它的开关，将它打开或是关闭。除囚犯之外，其他人都不会去碰开关。这盏灯会永远有充足的能源供应，灯泡和电路不会出故障。  除了开关这盏灯，放风的囚犯放风时留下的任何其它痕迹都会在夜晚被清除干净（包括在灯上作的任何记号）。牢房是完全封闭的，院子里的灯光在牢房里看不到。只有放风到院子里的人才能看到。<br>
+3. 好了现在我向你们提出一个要求，只要你们做到了，就可以全部获得释放：<br>
+4. 给你们15分钟商量你们的方案。15分钟以后，你们将被关进我刚才说的那个监狱，永远无法再交流，被关若干天后，你们中间如果任何一个人能够向我证明你们每个人都至少放风了一次，我就把你们放了，不然永远别想再出来。 好吧！这样吧，如果你们有谁现在可以告诉我这个方法，也就是能够证明你们每人至少放风一次的方法，我马上放掉你们！<br>
+5. 其中一个囚犯想了几分钟，回答了这个问题，国王听后，如自己所说的把他们全部给放了。请问那个囚犯是用什么方法证明的？</li>
+</ol>
+</blockquote>
+<p>分析：1.s首先100百个人里先确定一个计数者去关灯，其他人只负责开，计数到100<br>
+2.当你进入院子里发现灯是关的并且你是第一次进入院子的时候就打开灯，如果灯是开着的或             者你不是第一次进入院子则不改变灯的状态</p>
+<p>设计：灯开为X=1，灯灭为X=0<br>
+开灯人Z=2,其他人第一次进入院子Z=1，否则Z=0<br>
+计数n=1(计数者本身),n++</p>
+<pre><code>if(X=0&amp;Z=1)
+  {
+      X=1;
+      Z=0;
+   }
+if(X=1&amp;Z=2)
+{
+    X=0;
+    n++;
+}
+</code></pre>
 ]]></content>
     </entry>
 </feed>
