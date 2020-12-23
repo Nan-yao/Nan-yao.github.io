@@ -16,7 +16,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://nan-yao.github.io/images/avatar.png?v=1607607596179" style="width:127px;" />
+     <img src="https://nan-yao.github.io/images/avatar.png?v=1608730290996" style="width:127px;" />
 
      <div class="description">
       <p>愿你的国降临</p>
@@ -286,7 +286,69 @@
   print '随机数：' + convert(char(50),rand())
 </code></pre>
 <h3 id="日期和时间函数">🍨日期和时间函数</h3>
-<h2 id="数据库游标">数据库游标</h2>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>datediff(C,A,B)</td>
+<td>两个日期相减(A-B),返回的值形式为C(yy,m,d,h,s等)</td>
+</tr>
+<tr>
+<td>getdate()</td>
+<td>获取当前系统时间</td>
+</tr>
+<tr>
+<td>day()</td>
+<td>取时间的日</td>
+</tr>
+<tr>
+<td>month()</td>
+<td>取时间的月</td>
+</tr>
+<tr>
+<td>year()</td>
+<td>取时间的年</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三-数据库游标">三、数据库游标</h2>
+<h3 id="定义游标">🌈定义游标</h3>
+<p>游标=游标结果集+游标位置</p>
+<p>游标结果集是select 语句返回行的集合<br>
+游标位置是指向这个结果集中某一行的指针</p>
+<pre><code class="language-sql">   declare cur_student cursor
+   for select * from student
+</code></pre>
+<h3 id="打开游标">🌈打开游标</h3>
+<pre><code class="language-sql">   open cur_student
+</code></pre>
+<p>打开游标之后可以使用<font color='#48D1CC'>@@CURSOR_ROWS全局变量</font>检索游标中的行数</p>
+<h3 id="检索游标">🌈检索游标</h3>
+<pre><code class="language-sql">   fetch next from cur_student
+   while  @@FETCH_STATUS = 0
+   begin
+        fetch next from  cur_student
+   end
+</code></pre>
+<p>其中@@FETCH_STATUS保存了fetch操作的结束信息，如果为0，表示检索成功，不为0，检索出现错误</p>
+<h3 id="关闭游标">🌈关闭游标</h3>
+<pre><code class="language-sql">   close cur_student
+</code></pre>
+<h3 id="释放游标">🌈释放游标</h3>
+<pre><code class="language-sql">    deallocate cur_student
+</code></pre>
+<h2 id="四-事务transaction">四、事务（transaction）</h2>
+<pre><code class="language-sql">    begin tran tran_student  with mark-----开始一个事务，并将开始记录到日志
+    ....
+    commit tran tran_student  ------------提交事务
+    save tran StudnetSussess  ------------在事务执行期设置保存点
+    rollback tran tran_student/ StudnetSussess----------回滚事务到起点或保存点
+</code></pre>
 
        </div>
        <div class="post-footer">
