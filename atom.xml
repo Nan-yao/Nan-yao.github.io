@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nan-yao.github.io</id>
     <title>Nan的小屋</title>
-    <updated>2020-12-30T08:00:26.944Z</updated>
+    <updated>2020-12-30T09:18:51.319Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nan-yao.github.io"/>
     <link rel="self" href="https://nan-yao.github.io/atom.xml"/>
@@ -10,6 +10,51 @@
     <logo>https://nan-yao.github.io/images/avatar.png</logo>
     <icon>https://nan-yao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Nan的小屋</rights>
+    <entry>
+        <title type="html"><![CDATA[不想背单词(Hazard)]]></title>
+        <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-hazard/</id>
+        <link href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-hazard/">
+        </link>
+        <updated>2020-12-30T08:56:59.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://www.stantec.com/en/about/company-overview/hsse">Health, Safety, Security, and Environment</a></p>
+<p>live up to  符合，不负</p>
+<h4 id="strive-努力斗争力求">strive 努力，斗争，力求</h4>
+<h4 id="hazard-危险危害">hazard 危险,危害</h4>
+<p>proactive 积极的<br>
+promote 促进，提升<br>
+provent 阻止<br>
+protect 保护<br>
+crucial 关键的，至关重要的<br>
+vital 关键的<br>
+critical 关键的，批判的<br>
+critics 批判家</p>
+<h4 id="motivate-动机激励激发">motivate 动机，激励，激发</h4>
+<p>motivator 激发因素，激起</p>
+<h4 id="commit-犯罪提交承诺">commit 犯罪，提交，承诺</h4>
+<p>aspect 方面，方位，层次<br>
+element 要素，基础部分<br>
+combination 结合，联合<br>
+dynamic 动态的，发展变化的///力学，动力学</p>
+<h4 id="condition-状态环境条件">condition 状态，环境，条件</h4>
+<h4 id="conduct-组织安排实施行为">conduct 组织，安排，实施，行为</h4>
+<p>inclusive 包括广泛</p>
+<h4 id="establish-建立创立">establish 建立，创立</h4>
+<p>overall 全面的<br>
+indicate 指示</p>
+<h4 id="investigate-调查研究">investigate 调查，研究</h4>
+<p>inspection 检查<br>
+mitigate 缓和，平息<br>
+monitor 监视，跟踪<br>
+incorporate 包含，吸收</p>
+<h4 id="engage-in-参加吸引">engage in 参加，吸引</h4>
+<p>steward 管家<br>
+scope 范围</p>
+<h4 id="eliminate-排除消除">eliminate 排除，消除</h4>
+<p>encounter 比赛，交锋</p>
+<h4 id="disturb-干扰妨碍">disturb 干扰，妨碍</h4>
+<p>energy 能源</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[不想背单词（work）]]></title>
         <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-work/</id>
@@ -488,30 +533,6 @@ sepecifically 特有的<br>
 especially 尤其，特别的<br>
 particularly 特别，尤其<br>
 foundation 基础</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[不想背单词(基因)]]></title>
-        <id>https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-si/</id>
-        <link href="https://nan-yao.github.io/post/bu-xiang-bei-dan-ci-si/">
-        </link>
-        <updated>2020-11-23T13:16:52.000Z</updated>
-        <content type="html"><![CDATA[<p>gene 基因<br>
-enhance 提高<br>
-integrate 合并<br>
-regenerate 回收（regeneration 再生）<br>
-tissue 组织<br>
-observed /.v观察(observant /.adj善于观察的)<br>
-constant /.adj 不断的（constantly /.adv）</p>
-<h3 id="stabilized-v使稳定stabilization-n稳定性">stabilized /.v使稳定（stabilization /.n稳定性）</h3>
-<p>strip 剥光，除去</p>
-<h3 id="crucial-critical关键性的vital">crucial (critical)关键性的/vital</h3>
-<h3 id="extra-额外的entire-全部的">extra 额外的/entire 全部的</h3>
-<h3 id="ultimate-adj最后的ultimately-adv-最终">ultimate /.adj最后的（ultimately /.adv 最终）</h3>
-<h3 id="innovation-改革">innovation 改革</h3>
-<p>unmet 未满足的<br>
-destructive 毁灭的（destruction /.n 毁灭，破坏）（destroy /.v毁灭）<br>
-rigor 严格，严酷</p>
 ]]></content>
     </entry>
 </feed>
